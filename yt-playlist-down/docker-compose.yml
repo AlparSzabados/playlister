@@ -1,0 +1,18 @@
+version: "2.1"
+services:
+  playlister:
+    image: playlister
+    build:
+      context: .
+    container_name: playlister
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Bucharest
+    volumes:
+      - /home/alpar/server/music:/music
+      - /home/alpar/server/playlister/playlists.txt:/playlists.txt
+      - /home/alpar/server/playlister/records.txt:/records.txt
+    ports:
+      - 5000:5000
+    restart: unless-stopped
