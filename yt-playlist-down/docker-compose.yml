@@ -11,8 +11,7 @@ services:
       - TZ=Europe/Bucharest
     volumes:
       - /home/alpar/server/music:/music
-      - /home/alpar/server/playlister/playlists.txt:/playlists.txt
-      - /home/alpar/server/playlister/records.txt:/records.txt
+      - /home/alpar/server/playlister:/data
     ports:
       - 5000:5000
     restart: unless-stopped

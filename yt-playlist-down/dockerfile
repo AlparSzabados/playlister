@@ -8,6 +8,7 @@ RUN pip3 install ffmpeg
 RUN pip3 install ffprobe
 RUN pip3 install --upgrade youtube-dl
 RUN apt-get update && apt-get install -y ffmpeg
+RUN mkdir data
 COPY . .
 
 CMD [ "python3", "-m", "flask", "run", "--host=0.0.0.0"]
